@@ -1,10 +1,9 @@
 #!/bin/sh
 sudo make clean
-chmod 777 -R *
 sudo apt-get update
 sudo apt-get -y upgrade
 cd `pwd`/depends
-sudo make -j2 HOST=aarch64-linux-gnu
+sudo make -j2
 cd ..
 sudo ./autogen.sh
 sudo mkdir `pwd`/db4
@@ -15,6 +14,6 @@ sudo ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=`pwd`/d
 sudo make install
 cd ../../
 sudo ./autogen.sh
-sudo ./configure LDFLAGS="-L`pwd`/db4/lib/" CPPFLAGS="-I`pwd`/db4/include/" --prefix=`pwd`/depends/aarch64-linux-gnu --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++
+sudo ./configure LDFLAGS="-L`pwd`/db4/lib/" CPPFLAGS="-I`pwd`/db4/include/" --prefix=`pwd`/depends/x86_64-pc-linux-gnu
 sudo make -j2
 echo "Remember to strip the daemon, cli, and tx files!"
