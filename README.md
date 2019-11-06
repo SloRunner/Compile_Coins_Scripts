@@ -31,7 +31,12 @@ Source list is from: https://github.com/bitcoin/bitcoin/blob/master/depends/READ
 sudo apt-get install curl librsvg2-bin libtiff-tools bsdmainutils cmake imagemagick libcap-dev libz-dev libbz2-dev python-setuptools
 sudo apt-get install curl g++-aarch64-linux-gnu g++-4.8-aarch64-linux-gnu gcc-4.8-aarch64-linux-gnu binutils-aarch64-linux-gnu g++-arm-linux-gnueabihf g++-4.8-arm-linux-gnueabihf gcc-4.8-arm-linux-gnueabihf binutils-arm-linux-gnueabihf g++-4.8-multilib gcc-4.8-multilib binutils-gold bsdmainutils g++-aarch64-linux-gnu binutils-aarch64-linux-gnu g++-aarch64-linux-gnu
 ```
-
+### Master Compile Script - works, in testing
+```
+sudo wget https://raw.githubusercontent.com/nashsclay/Compile_Coins_Scripts/master/master_build_script.sh
+sudo chmod +x master_build_script.sh
+sudo ./master_build_script.sh
+```
 
 ### Linux 64 bit (Daemon, TX, CLI, and QT)
 ```
@@ -82,6 +87,9 @@ wget https://raw.githubusercontent.com/nashsclay/Compile_Coins_Scripts/master/AR
 chmod +x ARM64_compile.sh
 ./ARM64_compile.sh
 ```
+
+### Berkeley DB 4.8.30.nc fix
+Change lines 147 and 179 from __atomic_compare_exchange to __atomic_compare_exchange_db
 
 # Old Coin Compile
 
